@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="icon.png" />
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="login.html" rel="import" />
+
+    <title>Differential_networks</title>
+
+</head>
+
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <img src="logo.png" alt="Bankist logo" class="nav__logo" id="logo" />
+            <ul class="nav__links">
+                <li class="nav__item">
+                    <a class="nav__link" href="#section--1">Documentation</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#section--2">Visualizations</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#section--3">Simulation</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#section--4">Help</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#section--5">About</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--btn btn--show-modal" href="IISC-Project/login.html">Login</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="https://github.com/DeepaMahm/differential_networks">Github</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header__title">
+            <h1>
+
+                <!-- Green highlight effect -->
+                <span class="highlight">Differential</span> _ <br />
+                <span class="highlight">Networks</span>
+            </h1>
+            <h4>Simulator for hierarchical network dynamics.</h4>
+            <button class="btn--text btn--scroll-to">Learn more &DownArrow;</button>
+            <p> </p><img src="hero.jpg" class="header__img" alt="Minimalist differential_networks items" />
+        </div>
+    </header>
+
+    <section class="section" id="section--1">
+        <div class="section__title">
+            <h2 class="section__description">Documentation</h2>
+            <h3 class="section__header">
+                Everything you need in a modern life and more.
+            </h3>
+        </div>
+        <!-- Load Font Awesome Icon Library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- Buttons to choose list or grid view -->
+
+        <h3 class="section__header">
+
+            <div style="background-color:rgba(0, 0, 0, 0.038);">
+                <div style="text-align:center"></div>
+
+                User Guide
+
+        </h3>
+
+        <button onclick="listView()"><i class="fa fa-bars"></i> List View </button>
+        <button onclick="gridView()"><i class="fa fa-th-large"></i> Grid View </button>
+
+        <div class="row">
+            <div class="column" style="background-color:rgb(221, 216, 216);">
+                <button class="btn content" onclick="listView()"><h3>Exploring Public Projects</h3></button>
+
+            </div>
+            <div class="column" style="background-color:rgb(222, 217, 217);">
+                <button class="btn referances" onclick="listView()"><h3>Simulating Projects</h3></button>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column" style="background-color:rgb(225, 222, 222);">
+                <button class="btn people" onclick="listView()"><h3>Creating Projects</h3></button>
+
+            </div>
+            <div class="column" style="background-color:rgb(228, 224, 224);">
+                <button class="btn statistics" onclick="listView()"><h3>Creating Vega Data Visualizations</h3></button>
+
+            </div>
+            <div class="column" style="background-color:rgb(233, 229, 229);">
+                <button class="btn description" onclick="listView()"><h3>Validiating Projects</h3></button>
+
+            </div>
+            <div class="column" style="background-color:rgb(236, 232, 232);">
+                <button class="btn content" onclick="listView()"><h3>Publishing Projects</h3></button>
+
+            </div>
+            <div class="column" style="background-color:rgb(237, 235, 235);">
+                <button class="btn referances" onclick="listView()"><h3>Source Model Repositories</h3></button>
+
+            </div>
+            <div class="column" style="background-color:rgb(247, 243, 243);">
+                <button class="btn people" onclick="listView()"><h3>Finding Simulation Tools</h3></button>
+
+            </div>
+        </div>
+        <!-- <div class="Documentation">
+        <img
+          src="digital-lazy.jpg"
+          data-src="img/digital.jpg"
+          alt="Computer"
+          class="features__img lazy-img"
+        />
+        <div class="features__feature">
+          <div class="features__icon">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-monitor"></use>
+            </svg>
+          </div> -->
+
+        <h5 class="features__header">Deeper Iterative Tutorials</h5>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde alias sint quos? Accusantium a fugiat porro reiciendis saepe quibusdam debitis ducimus.
+        </p>
+        </div>
+
+        <div class="features__feature">
+            <div class="features__icon">
+                <svg>
+                    <use xlink:href="img/icons.svg#icon-trending-up"></use>
+                    <img src="Pics/geo.gif" data-src="Pics/geo.gif" alt="Geo" class="features__img geo-img" />
+                </svg>
+            </div>
+            <h5 class="features__header">Example Simulation Projects</h5>
+            <p>
+                Nesciunt quos autem dolorum voluptates cum dolores dicta fuga inventore ab? Nulla incidunt eius numquam sequi iste pariatur quibusdam!
+            </p>
+        </div>
+        <div class="features__feature">
+            <div class="features__icon">
+                <svg>
+                    <use xlink:href="img/icons.svg#icon-credit-card"></use>
+                    <img src="Pics/app_raycaster.gif" data-src="Pics/app_raycaster.gif" alt="Heart"
+                        class="features__img app_raycaster-img" />
+
+                    <!-- <img src="card-lazy.jpg" data-src="img/card.jpg" alt="Credit card" class="features__img lazy-img" /> -->
+
+                </svg>
+            </div>
+            <h5 class="features__header">Documentation for the REST APIs</h5>
+            <p>
+                Quasi, fugit in cumque cupiditate reprehenderit debitis animi enim eveniet consequatur odit quam quos possimus assumenda dicta fuga inventore ab.
+            </p>
+        </div>
+        </div>
+    </section>
+
+    <section class="section" id="section--2">
+        <div class="section__title">
+            <h2 class="section__description">Visualizations</h2>
+            <h3 class="section__header">
+                Everything as simple as possible, but no simpler.
+            </h3>
+        </div>
+
+        <div class="operations">
+            <div class="operations__tab-container">
+                <button class="btn operations__tab operations__tab--1 operations__tab--active" data-tab="1">
+                    <span>01</span>Instant Transfers
+                </button>
+                <button class="btn operations__tab operations__tab--2" data-tab="2">
+                    <span>02</span>Instant Loans
+                </button>
+                <button class="btn operations__tab operations__tab--3" data-tab="3">
+                    <span>03</span>Instant Closing
+                </button>
+            </div>
+            <div class="operations__content operations__content--1 operations__content--active">
+                <div class="operations__icon operations__icon--1">
+                    <svg>
+                        <use xlink:href="img/icons.svg#icon-upload"></use>
+                    </svg>
+                </div>
+                <h5 class="operations__header">
+                    Tranfser money to anyone, instantly! No fees, no BS.
+                </h5>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+
+            <div class="operations__content operations__content--2">
+                <div class="operations__icon operations__icon--2">
+                    <svg>
+                        <use xlink:href="img/icons.svg#icon-home"></use>
+                    </svg>
+                </div>
+                <h5 class="operations__header">
+                    Buy a home or make your dreams come true, with instant loans.
+                </h5>
+                <p>
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+            <div class="operations__content operations__content--3">
+                <div class="operations__icon operations__icon--3">
+                    <svg>
+                        <use xlink:href="img/icons.svg#icon-user-x"></use>
+                    </svg>
+                </div>
+                <h5 class="operations__header">
+                    No longer need your account? No problem! Close it instantly.
+                </h5>
+                <p>
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="section--3">
+        <div class="section__title section__title--testimonials">
+            <h2 class="section__description">Simulation</h2>
+            <h3 class="section__header">
+                A simpler coding experience for a simpler life.
+            </h3>
+        </div>
+
+        <div class="slider">
+            <div class="slide slide--1">
+                <div class="testimonial">
+                    <h5 class="testimonial__header">Best financial decision ever!</h5>
+                    <blockquote class="testimonial__text">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium quas quisquam non? Quas voluptate nulla minima deleniti optio ullam nesciunt, numquam corporis et asperiores laboriosam sunt, praesentium suscipit blanditiis. Necessitatibus id alias
+                        reiciendis, perferendis facere pariatur dolore veniam autem esse non voluptatem saepe provident nihil molestiae.
+                    </blockquote>
+                    <address class="testimonial__author">
+                        <img src="user-1.jpg" alt="" class="testimonial__photo" />
+                        <h6 class="testimonial__name">Aarav Lynn</h6>
+                        <p class="testimonial__location">San Francisco, USA</p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="slide slide--2">
+                <div class="testimonial">
+                    <h5 class="testimonial__header">
+                        The last step to becoming a complete minimalist
+                    </h5>
+                    <blockquote class="testimonial__text">
+                        Quisquam itaque deserunt ullam, quia ea repellendus provident, ducimus neque ipsam modi voluptatibus doloremque, corrupti laborum. Incidunt numquam perferendis veritatis neque repellendus. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo
+                        deserunt exercitationem deleniti.
+                    </blockquote>
+                    <address class="testimonial__author">
+                        <img src="user-2.jpg" alt="" class="testimonial__photo" />
+                        <h6 class="testimonial__name">Miyah Miles</h6>
+                        <p class="testimonial__location">London, UK</p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="slide slide--3">
+                <div class="testimonial">
+                    <h5 class="testimonial__header">
+                        Finally free from old-school banks
+                    </h5>
+                    <blockquote class="testimonial__text">
+                        Debitis, nihil sit minus suscipit magni aperiam vel tenetur incidunt commodi architecto numquam omnis nulla autem, necessitatibus blanditiis modi similique quidem. Odio aliquam culpa dicta beatae quod maiores ipsa minus consequatur error sunt, deleniti
+                        saepe aliquid quos inventore sequi. Necessitatibus id alias reiciendis, perferendis facere.
+                    </blockquote>
+                    <address class="testimonial__author">
+                        <img src="user-3.jpg" alt="" class="testimonial__photo" />
+                        <h6 class="testimonial__name">Francisco Gomes</h6>
+                        <p class="testimonial__location">Lisbon, Portugal</p>
+                    </address>
+                </div>
+            </div>
+            <!--<div class="slide"><img src="img/img-1.jpg" alt="Photo 1" /></div>
+        <div class="slide"><img src="img/img-2.jpg" alt="Photo 2" /></div>
+        <div class="slide"><img src="img/img-3.jpg" alt="Photo 3" /></div>
+        <div class="slide"><img src="img/img-4.jpg" alt="Photo 4" /></div>-->
+
+            <button class="slider__btn slider__btn--left">&larr;</button>
+            <button class="slider__btn slider__btn--right">&rarr;</button>
+            <div class="dots"></div>
+        </div>
+    </section>
+
+    <section class="section section--sign-up">
+        <div class="section__title">
+            <h3 class="section__header">
+                The best day to join Bankist was one year ago. The second best is today!
+            </h3>
+        </div>
+        <button class="btn btn--show-modal">Open your free account today!</button>
+    </section>
+
+    <section class="section" id="section--4">
+        <div class="section__title">
+            <h2 class="section__description">Help</h2>
+            <h3 class="section__header">
+                Feel Free to ask, Happy to Help
+            </h3>
+
+        </div>
+
+        <section class="section" id="section--5">
+            <div class="section__title">
+                <h3 class="section__description">About</h3>
+                <h1 class="section__header">
+                    It's all about me
+                </h1>
+
+                <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search up.." title="Type in a category">
+
+
+                <div class="btn-group">
+                    <button class="btn content" onclick="listView()"><br>Content               ></button>
+                    <button class="btn referances" onclick="listView()"><br>Referances                     ></button>
+                    <button class="btn people" onclick="listView()"><br>People               ></button>
+                    <button class="btn statistics" onclick="listView()"><br>Statistics                 ></button>
+                    <button class="btn description" onclick="listView()"><br>Description               ></button>
+                </div>
+
+
+
+
+                <footer class="footer">
+                    <ul class="footer__nav">
+                        <li class="footer__item">
+                            <a class="footer__link" href="https://fluxer.umbc.edu/changelog">Changelog</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__link" href="#">Pricing</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__link" href="#">Terms of Use</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__link" href="#">Privacy Policy</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__link" href="#">Careers</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__link" href="#">Blog</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__link" href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                    <img src="icon.png" alt="Logo" class="footer__logo" />
+                    <p class="footer__copyright">
+                        <a class="footer__link twitter-link" target="_blank">No copyright to any
+                        Bankist</a>
+                    </p>
+                    <p class="footer__copyright">
+                        <a class="footer__link twitter-link" target="_blank">Made with by Subhraneel
+                        Haldar</a>
+                    </p>
+                    <p class="footer__copyright">
+                        <a class="footer__link twitter-link" target="_blank">I have made this
+                        website for fun and
+                        understanding.</a>
+                    </p>
+                </footer>
+
+                <div class="modal hidden">
+                    <button class="btn--close-modal">&times;</button>
+                    <h2 class="modal__header">
+                        Open your bank account <br /> in just <span class="highlight">5
+                        minutes</span>
+                    </h2>
+                    <form class="modal__form">
+                        <label>First Name</label>
+                        <input type="text" />
+                        <label>Last Name</label>
+                        <input type="text" />
+                        <label>Email Address</label>
+                        <input type="email" />
+                        <button class="btn" formaction="https://github.com/Subhraneel77/">Next step
+                        →</button>
+                    </form>
+                </div>
+
+                <div class="overlay hidden"></div>
+
+                <script src="script.js"></script>
+</body>
+
+</html>
