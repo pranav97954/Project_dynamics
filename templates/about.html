@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        About
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{%static 'js/script.js'%}"></script>
+</head>
+
+<body>
+    <section class="section" id="section--5">
+        <div class="section__title">
+            <h1 class="section__description">About</h1>
+            <h1 class="section__header">
+
+            </h1>
+
+            <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search up.." title="Type in a category">
+
+
+            <div class="btn-group">
+                <button class="btn referances" onclick="listView()"><br>References                     </button>
+                <button class="btn people" onclick="listView()"><br>Development Team               </button>
+                <button class="btn content" onclick="listView()"><br>Content               </button>
+                <button class="btn statistics" onclick="listView()"><br>Version history                 </button>
+                <button class="btn description" onclick="listView()"><br>Citing us               </button>
+                <button class="btn description" onclick="listView()"><br>Contact us              </button>
+            </div>
+
+
+</body>
+
+</html>
