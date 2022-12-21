@@ -10,4 +10,5 @@ urlpatterns = [
     path('slide', views.slide,name="slide"),
     path('simulation', views.simulation,name="simulation"),
     path('visualization', views.visualization,name="visualization"),
+    path('test', views.tests,name="tests"),
 ]
