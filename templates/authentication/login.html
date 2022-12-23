@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Login</h2>
+                <hr>
+                <form action="" method="post" novalidate class="shadow">
+                    {% csrf_token %}
+                    {% for fm in form %}
+                    {{fm.label_tag}} {{fm}} <small class="text-danger">{{fm.errors|striptags}}</small> <br>
+                    {% endfor %}
+                    <small><a href="http://127.0.0.1:8000/password-reset/"
+                        class="text-danger">Foget Password ?</a>
+                    </small>
+                    <input type="submit" value="Login" class="btn"> <br>
+
+                    <div class="text-primary">
+                        <small>New User ? <a href="http://127.0.0.1:8000/registration/"
+                            class="text-danger">Register</a>
+                        </small>                          
+                    </div>
+
+                    {% if form.non_field_errors %}
+                        {% for error in form.non_field_errors %}
+                             <p class="alert">{{error}}</p>
+                        {% endfor %}
+                    {% endif %}           
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

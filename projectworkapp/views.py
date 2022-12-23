@@ -2,12 +2,15 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from projectworkapp.function import handle_uploaded_file  
 from projectworkapp.forms import SubmitForm  
+#Authonication
+from django.views import View
+from .forms import RegisterForm
+from django.contrib import messages
+
+
 # Create your views here.
 def home(request):
     return render(request,"index.html")
-
-def login(request):
-    return render(request,"login.html")
 
 def about(request):
     return render(request,"about.html")
@@ -33,3 +36,17 @@ def tests(request):
     else:  
         s = SubmitForm()  
         return render(request,"test.html",{'form':s})  
+
+
+class Register(View):
+    def get(self,request):
+        form = RegisterForm()
+        return render(request,'authentication/Register.html',locals())
+    def post(self,request):
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,"Congratulations! User Register Successfully")
+        else:
+            messages.warning(request,"Invalid Input Data")  
+        return render(request,'authentication/Register.html',locals()) 
