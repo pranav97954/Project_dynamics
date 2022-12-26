@@ -26,7 +26,6 @@ def runsimulation():
     except OSError:
         pass
 
-
     start = time.time()
     os.chdir(SIMULATOR_DIR)
     print("running simulation ...")
