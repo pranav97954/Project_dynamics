@@ -78,9 +78,11 @@ WSGI_APPLICATION = 'researchproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'project1_db',
+        #'NAME': 'project1_db',
+        'NAME': 'pranavdb',
         'USER': 'root',
-        'PASSWORD': 'rohitpandey123',
+        #'PASSWORD': 'rohitpandey123',
+        'PASSWORD':'123456789',
         'HOST': 'localhost',  # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '3306'
     }

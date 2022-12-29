@@ -18,7 +18,6 @@ from researchproject import (
 
 
 def runsimulation():
-
     # clear results dir
     try:
         os.remove(RESULTS_MAT)

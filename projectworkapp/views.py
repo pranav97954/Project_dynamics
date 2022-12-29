@@ -8,6 +8,7 @@ from .forms import RegisterForm
 from django.contrib import messages
 from django.core.mail import send_mail
 from researchproject import settings
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
@@ -19,8 +20,9 @@ def about(request):
 def documentation(request):
     return render(request,"documentation.html")
 
+@login_required(login_url='http://127.0.0.1:8000/login/')
 def simulation(request):
-    return render(request,"simulation.html")
+        return render(request,"simulation.html")
 
 def slide(request):
     return render(request,"slide.html")
