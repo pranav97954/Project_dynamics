@@ -1,36 +1,80 @@
 <!DOCTYPE html>
-<!-- This code is for demonstration purposes only.  You should not hotlink to Github, Rawgit, or files from the Cytoscape.js documentation in your production apps. -->
-<html>
-  <head>
-    <meta charset=utf-8 />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+<html lang="en">
 
-    <title>Cola.js/Cytoscape.js</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href="style.css" rel="stylesheet" />
 
-    <!-- polyfills so the demo works on old browsers, like IE -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.2.20171210/classList.min.js"></script>
-    <script src="https://unpkg.com/bluebird@3.5.2/js/browser/bluebird.js"></script>
-    <script src="https://unpkg.com/whatwg-fetch@3.0.0/dist/fetch.umd.js"></script>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="Pics/logo.png" />
 
-    <!-- libs used by demo -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.min.js"></script>
-    <script src="https://unpkg.com/webcola@3.3.8/WebCola/cola.min.js"></script>
-    <script src="https://unpkg.com/popper.js@1.14.4/dist/umd/popper.js"></script>
-    <script src="https://unpkg.com/tippy.js@2.6.0/dist/tippy.all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 
-    <!-- cy libs -->
-    <script src="cytoscape.min.js"></script>
-    <script src="https://unpkg.com/cytoscape-cola@2.2.3/cytoscape-cola.js"></script>
-    <script src="https://unpkg.com/cytoscape-popper@1.0.2/cytoscape-popper.js"></script>
 
-    <!-- demo src-->
-    <script src="code.js"></script>
-  </head>
-  <body>
-    <div id="cy"></div>
+    <title>Differential_networks</title>
 
-    <span class="fa fa-bars config-toggle" id="config-toggle"></span>   
-  </body>
+</head>
+
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <img src="Pics/Logo.png" alt="Bankist logo" class="nav__logo" id="logo" />
+            <ul class="nav__links">
+                <li class="nav__item">
+                    <a class="nav__link" href="index.html">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="documentation.html">Documentation</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="visualization.html">Visualizations</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="simulation.html">Simulation</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#section--4">Concepts</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="about.html">About</a>
+                </li>
+                <li class="nav__item">
+                    <a href="login.html"><img src="Pics/Login Logo.png" alt="Login logo" class="nav__logo" id="logo" /></a>
+                    <!-- <a class="nav__link" href="login.html">Login</a> -->
+                </li>
+                <li class="nav__item">
+                    <a href="https://github.com/DeepaMahm/differential_networks"><img src="Pics/Github Logo.png" alt="Github logo" class="nav__logo" id="logo" /></a>
+                    <!-- <a class="nav__link" href="https://github.com/DeepaMahm/differential_networks">Github</a> -->
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header__title">
+            <h1>
+                <!-- Green highlight effect -->
+                <span class="highlight">Differential</span> <br />
+                <span class="highlight">Networks</span>
+            </h1>
+            <h4>Simulator for hierarchical network dynamics.</h4>
+            <button class="btn--text btn--scroll-to">Learn more &DownArrow;</button>
+            <p> </p><img src="" class="header__img" alt="" />
+            <!-- Slideshow container -->
+
+            <!-- Slideshow container -->
+            <h2>
+                <a class="nav__link" href="slider.html"><br>EXPLORE</br>
+                </a>
+            </h2>
+
+        </div>
+    </header>
+
+
+    <div class="overlay hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+
 </html>
