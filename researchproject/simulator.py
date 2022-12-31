@@ -15,7 +15,8 @@ from researchproject import (
 # from collections import OrderedDict
 # import subprocess
 # import sys
-
+from django.core.mail import send_mail
+from researchproject import settings
 
 def runsimulation():
     # clear results dir
@@ -31,7 +32,6 @@ def runsimulation():
     os.system(f'{SIMULATOR}')
     stop = time.time()
     print("simulation is complete \n Elapsed time: ", stop - start)
-
 
 if __name__ == '__main__':
     # G = create_graph(attributes=True, directed=True, sheet=test_case)

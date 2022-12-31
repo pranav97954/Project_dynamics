@@ -31,8 +31,8 @@ class MySetPasswordForm(SetPasswordForm):
     new_password2 = forms.CharField(label='Confirm New Password',widget=forms.PasswordInput(attrs={'autocomplete':'current-password','class':'form-control'}))
 
 class SubmitForm(forms.Form):  
-    firstname = forms.CharField(label="Enter first name",max_length=50)  
-    lastname  = forms.CharField(label="Enter last name", max_length = 10)  
-    email     = forms.EmailField(label="Enter Email") 
+    #firstname = forms.CharField(label="Enter first name",max_length=50)  
+    #lastname  = forms.CharField(label="Enter last name", max_length = 10)  
+    email     = forms.EmailField(label="Enter Email")
     foldername =  forms.CharField(label="Enter folder name",max_length=50)  
     file      = forms.FileField() # for creating file input

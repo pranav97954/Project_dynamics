@@ -7,8 +7,11 @@ from django.views import View
 from .forms import RegisterForm
 from django.contrib import messages
 from django.core.mail import send_mail
-from researchproject import settings
+from researchproject import settings,simulator
 from django.contrib.auth.decorators import login_required
+
+from django.contrib.auth import views as auth_view
+#running simmulator
 
 # Create your views here.
 def home(request):
@@ -29,16 +32,23 @@ def slide(request):
 
 def visualization(request):
     return render(request,"visualization.html")
-
+    
+@login_required(login_url='http://127.0.0.1:8000/login/')
 def tests(request):  
-    if request.method == 'POST': 
+    if request.method == 'POST':
+        user_email = request.POST['email']
         s = SubmitForm(request.POST, request.FILES)
         if s.is_valid():  
-            handle_uploaded_file(request.FILES['file'],request.POST['foldername'])  
-            return HttpResponse("File uploaded successfuly")  
+            handle_uploaded_file(request.FILES['file'],request.POST['foldername'])
+          #up  return HttpResponse("File uploaded successfully")
+            simulator.runsimulation()
+            mail_message = f'The task  finished successfully.'\
+                           f'You can view the results by visiting'
+            send_mail('Register account successfully', mail_message, settings.EMAIL_HOST_USER, [user_email],fail_silently=False)
+            return HttpResponse("File uploaded successfully")
     else:  
         s = SubmitForm()  
-        return render(request,"test.html",{'form':s})  
+        return render(request,"test.html",{'form':s})
 
 
 class Register(View):

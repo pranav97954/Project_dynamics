@@ -11,7 +11,7 @@ urlpatterns = [
     path('slide', views.slide,name="slide"),
     path('simulation/', views.simulation,name="simulation"),
     path('visualization', views.visualization,name="visualization"),
-    path('test', views.tests,name="tests"),
+    path('simulation/test', views.tests,name="tests"),
 
     #login
     path('registration/',views.Register.as_view(),name = 'register'),
