@@ -1,8 +1,65 @@
-<form method="POST" class="post-form" enctype="multipart/form-data">  
-        {% csrf_token %}  
-        {{ form.as_p }} 
-        <button type="submit" class="save btn btn-default">Save</button>  
-        <br>
-        <br>
-        <button><a href="http://127.0.0.1:8000/logout/">Logout</a></button>
-</form> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+<style>
+        *{
+           padding: 0;
+           margin: 0;
+           box-sizing: border-box;
+           color: #1a1f36;
+           font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Ubuntu,sans-serif;
+           word-wrap: break-word;
+        }
+       
+        body {
+  align-items: center;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+form {
+  background-color: #f6f6f8;
+  border-radius: 20px;
+  box-sizing: border-box;
+ /* height: 500px;*/
+  padding: 20px;
+  width: 320px;
+}
+#submit {
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  outline: 0;
+  text-align: center;
+  width: 100%;
+}
+
+#submit:active {
+  background-color: rgb(146, 200, 244);
+}
+</style>
+<body>
+        
+        <form method="POST" class="post-form" enctype="multipart/form-data">  
+                {% csrf_token %}  
+                {{ form.as_p }} 
+                <button type="submit" class="submit" id="submit">Save</button>  
+                <br>
+                <br>
+                <button><a href="http://127.0.0.1:8000/logout/">Logout</a></button>
+        </form> 
+</body>
+</html>
