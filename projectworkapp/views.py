@@ -44,7 +44,7 @@ def tests(request):
             simulator.runsimulation()
             mail_message = f'The task  finished successfully.'\
                            f'You can view the results by visiting'
-            send_mail('Register account successfully', mail_message, settings.EMAIL_HOST_USER, [user_email],fail_silently=False)
+            send_mail('Your Result is Ready', mail_message, settings.EMAIL_HOST_USER, [user_email],fail_silently=False)
             return HttpResponse("File uploaded successfully")
     else:  
         s = SubmitForm()  

@@ -15,8 +15,6 @@ from researchproject import (
 # from collections import OrderedDict
 # import subprocess
 # import sys
-from django.core.mail import send_mail
-from researchproject import settings
 
 def runsimulation():
     # clear results dir
