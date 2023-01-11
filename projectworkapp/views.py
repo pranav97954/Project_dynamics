@@ -10,7 +10,7 @@ from django.core.mail import send_mail
 from researchproject import settings,simulator
 from django.contrib.auth.decorators import login_required
 
-from django.contrib.auth import views as auth_view
+from django.contrib.auth import views as User
 #running simmulator
 
 # Create your views here.
@@ -36,19 +36,28 @@ def visualization(request):
 @login_required(login_url='http://127.0.0.1:8000/login/')
 def tests(request):  
     if request.method == 'POST':
-        user_email = request.POST['email']
+        #user_email = request.POST['email']
+        filename = request.POST['foldername']
         s = SubmitForm(request.POST, request.FILES)
         if s.is_valid():  
             handle_uploaded_file(request.FILES['file'],request.POST['foldername'])
-          #up  return HttpResponse("File uploaded successfully")
-            simulator.runsimulation()
+          #upreturn HttpResponse("File uploaded successfully")
+            #simulator.runsimulation()
             mail_message = f'The task  finished successfully.'\
-                           f'You can view the results by visiting'
+                           f'You can view the results by visiting http://127.0.0.1:8000/result/{filename}/'
+            currentuser = request.user
+            user_email = currentuser.email
             send_mail('Your Result is Ready', mail_message, settings.EMAIL_HOST_USER, [user_email],fail_silently=False)
-            return HttpResponse("File uploaded successfully")
+            return HttpResponse("File uploaded successfully Your Result is Ready Check Email")
     else:  
         s = SubmitForm()  
         return render(request,"test.html",{'form':s})
+
+@login_required(login_url='http://127.0.0.1:8000/login/')
+def result(request,id_user):
+    currentuser = request.user
+    user_name = currentuser.username
+    return render(request,'result.html',{'id':user_name})
 
 
 class Register(View):
