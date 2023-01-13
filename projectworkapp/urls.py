@@ -12,6 +12,7 @@ urlpatterns = [
     path('simulation/', views.simulation,name="simulation"),
     path('visualization', views.visualization,name="visualization"),
     path('simulation/test', views.tests,name="tests"),
+    path('summary/', views.summary,name="summary"),
     
     path('result/<id_user>/',views.result,name="result"),
 

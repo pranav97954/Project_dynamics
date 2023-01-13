@@ -27,6 +27,10 @@ def documentation(request):
 def simulation(request):
         return render(request,"simulation.html")
 
+@login_required(login_url='http://127.0.0.1:8000/login/')
+def summary(request):
+        return render(request,"accountsummary.html")
+
 def slide(request):
     return render(request,"slide.html")
 
@@ -42,7 +46,7 @@ def tests(request):
         if s.is_valid():  
             handle_uploaded_file(request.FILES['file'],request.POST['foldername'])
           #upreturn HttpResponse("File uploaded successfully")
-            #simulator.runsimulation()
+            simulator.runsimulation()
             mail_message = f'The task  finished successfully.'\
                            f'You can view the results by visiting http://127.0.0.1:8000/result/{filename}/'
             currentuser = request.user
