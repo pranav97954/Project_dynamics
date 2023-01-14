@@ -29,7 +29,12 @@ def simulation(request):
 
 @login_required(login_url='http://127.0.0.1:8000/login/')
 def summary(request):
-        return render(request,"accountsummary.html")
+        mydict = {
+            'submit': '10',
+            'finish': '9',
+            'error':'1'
+            }
+        return render(request,"accountsummary.html",{'id':mydict})
 
 def slide(request):
     return render(request,"slide.html")
@@ -56,6 +61,10 @@ def tests(request):
     else:  
         s = SubmitForm()  
         return render(request,"test.html",{'form':s})
+
+
+def res(request):
+    return render(request,'res.html')
 
 @login_required(login_url='http://127.0.0.1:8000/login/')
 def result(request,id_user):

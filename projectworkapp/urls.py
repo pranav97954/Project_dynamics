@@ -15,7 +15,7 @@ urlpatterns = [
     path('summary/', views.summary,name="summary"),
     
     path('result/<id_user>/',views.result,name="result"),
-
+    path('res/',views.res,name="res"),
     #login
     path('registration/',views.Register.as_view(),name = 'register'),
     path('login/',auth_view.LoginView.as_view(template_name='authentication/login.html',authentication_form=LoginForm) , name='login'),
