@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm,UsernameField,PasswordChangeForm,SetPasswordForm,PasswordResetForm
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 
 class RegisterForm(UserCreationForm):
@@ -36,3 +37,4 @@ class SubmitForm(forms.Form):
     #email     = forms.EmailField(label="Enter Email")
     foldername =  forms.CharField(label="Enter folder name",max_length=50)  
     file      = forms.FileField() # for creating file input
+    time = timezone.now()
