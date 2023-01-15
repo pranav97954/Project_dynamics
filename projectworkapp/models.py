@@ -25,11 +25,3 @@ class Dataapp(models.Model):
 class UploadFiles(models.Model):
     field_name = models.FileField(upload_to=None, max_length=254)
     
-
-#update upload section 
-class upload(models.Model):
-    user = models.ForeignKey(User , on_delete=models.CASCADE,null=True)
-    uploadingdate = models.CharField(max_length=30,null=True)
-    foldername =  models.CharField(max_length=50,null=True)  
-    upload_file = models.FileField(null=True)
-    
