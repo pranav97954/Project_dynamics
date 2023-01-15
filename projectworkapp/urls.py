@@ -4,6 +4,9 @@ from .views import *
 from django.contrib.auth import views as auth_view
 from .forms import LoginForm,MyPasswordResetForm, MyPasswordChangeForm,MySetPasswordForm
 
+from django.conf.urls.static import static
+from django.conf import settings
+
 urlpatterns = [
     path('', views.home,name="home"),
     path('about', views.about,name="about"),
@@ -12,6 +15,7 @@ urlpatterns = [
     path('simulation/', views.simulation,name="simulation"),
     path('visualization', views.visualization,name="visualization"),
     path('simulation/test', views.tests,name="tests"),
+    path('upload/',views.upload_fl,name="upload"),
     path('summary/', views.summary,name="summary"),
     
     path('result/<id_user>/',views.result,name="result"),
@@ -28,4 +32,4 @@ urlpatterns = [
     path('password-reset-confirm/<uidb64>/<token>/',auth_view.PasswordResetConfirmView.as_view(template_name='authentication/password_reset_confirm.html',form_class=MySetPasswordForm),name='password_reset_confirm'),
     path('password-reset-complete/',auth_view.PasswordResetCompleteView.as_view(template_name='authentication/password_reset_complete.html'),name='password_reset_complete'),
 
-]
+]+static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

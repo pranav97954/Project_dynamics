@@ -13,6 +13,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import views as User
 #running simmulator
 
+from .models import upload
+from datetime import date
 # Create your views here.
 def home(request):
     return render(request,"index.html")
@@ -50,7 +52,7 @@ def tests(request):
         s = SubmitForm(request.POST, request.FILES)
         if s.is_valid():  
             handle_uploaded_file(request.FILES['file'],request.POST['foldername'])
-          #upreturn HttpResponse("File uploaded successfully")
+            #return HttpResponse("File uploaded successfully")
             simulator.runsimulation()
             mail_message = f'The task  finished successfully.'\
                            f'You can view the results by visiting http://127.0.0.1:8000/result/{filename}/'
@@ -61,6 +63,20 @@ def tests(request):
     else:  
         s = SubmitForm()  
         return render(request,"test.html",{'form':s})
+
+@login_required(login_url='http://127.0.0.1:8000/login/')
+def upload_fl(request):
+    if request.method == 'POST':
+        filenm = request.POST['foldername']
+        fl =  request.FILES['upload_file']
+        ct = User.objects.filter(username = request.user.username).first()
+        try:
+            upload.objects.create(user=ct, uploadingdate= date.today(), foldername= filenm, upload_file=fl)
+            return HttpResponse("File uploaded successfully")
+        except:
+            pass
+    else:
+        return render(request,"upload.html")
 
 
 def res(request):
