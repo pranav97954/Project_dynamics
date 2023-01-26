@@ -9,7 +9,6 @@
         <link rel="stylesheet" href="{% static 'css/stauth.css' %}">
 </head>
 <body>
-        
         <form method="POST" class="post-form" enctype="multipart/form-data">  
                 {% csrf_token %}  
                 {{ form.as_p }} 

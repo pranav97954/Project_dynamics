@@ -10,6 +10,7 @@ from django.core.mail import send_mail
 from researchproject import settings,simulator
 from django.contrib.auth.decorators import login_required
 
+from .models import upload_file
 from django.contrib.auth import views as User
 #running simmulator
 
@@ -47,13 +48,13 @@ def tests(request):
     if request.method == 'POST':
         #user_email = request.POST['email']
         filename = request.POST['foldername']
+        currentuser = request.user
         s = SubmitForm(request.POST, request.FILES)
         if s.is_valid():  
-            currentuser = request.user
             user_email = currentuser.email
             handle_uploaded_file(request.FILES['file'],request.POST['foldername'],currentuser.username)
             #return HttpResponse("File uploaded successfully")
-            #simulator.runsimulation()
+            simulator.runsimulation()
             mail_message = f'The task  finished successfully.'\
                            f'You can view the results by visiting http://127.0.0.1:8000/result/{filename}/'
             send_mail('Your Result is Ready', mail_message, settings.EMAIL_HOST_USER, [user_email],fail_silently=False)
@@ -61,9 +62,6 @@ def tests(request):
     else:  
         s = SubmitForm()  
         return render(request,"test.html",{'form':s})
-
-def res(request):
-    return render(request,'res.html')
 
 @login_required(login_url='http://127.0.0.1:8000/login/')
 def result(request,id_user):
@@ -89,3 +87,36 @@ class Register(View):
         else:
             messages.warning(request,"Invalid Input Data")  
         return render(request,'authentication/Register.html',locals()) 
+
+@login_required(login_url='http://127.0.0.1:8000/login/')
+def uploadfile(request):
+    dict= {}
+    if request.method == 'POST':
+        form= SubmitForm(request.POST,request.FILES)
+        if form.is_valid():
+            currentuser = request.user
+            user_email = currentuser.email
+            name = form.cleaned_data['file_name']
+            the_files = form.cleaned_data['files_data']
+            upload_file(file_name=name,my_file=the_files).save()
+            dict["status"]= "{}Added successfully"
+            simulator.runsimulation()
+            mail_message = f'The task  finished successfully.'\
+                           f'You can view the results by visiting http://127.0.0.1:8000/result/{name}/'
+            send_mail('Your Result is Ready', mail_message, settings.EMAIL_HOST_USER, [user_email],fail_silently=False)
+        else:
+            dict["status"]= "{}Failed"
+    else:
+        dict = {
+            'form':SubmitForm()
+        }
+    return render(request,'upload.html',dict)
+
+
+@login_required(login_url='http://127.0.0.1:8000/login/')
+def all(request):
+    all_data = upload_file.objects.all()
+    dict = {
+        'data':all_data
+    }
+    return render(request,'res.html',dict) 
