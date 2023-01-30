@@ -84,10 +84,17 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         #'NAME': 'project1_db',
+<<<<<<< HEAD
         'NAME': 'dynamicdb',
         'USER': 'root',
         #'PASSWORD': 'rohitpandey123',
         'PASSWORD':'Pranav@1234',
+=======
+        'NAME': 'pranavdb',
+        'USER': 'root',
+        #'PASSWORD': 'rohitpandey123',
+        'PASSWORD':'123456789',
+>>>>>>> parent of 97e0d43 (first commit)
         'HOST': 'localhost',  # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '3306'
     }
