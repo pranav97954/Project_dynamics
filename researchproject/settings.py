@@ -84,10 +84,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         #'NAME': 'project1_db',
-        'NAME': 'pranavdb',
+        'NAME': 'dynamicdb',
         'USER': 'root',
         #'PASSWORD': 'rohitpandey123',
-        'PASSWORD':'123456789',
+        'PASSWORD':'Pranav@1234',
         'HOST': 'localhost',  # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '3306'
     }
