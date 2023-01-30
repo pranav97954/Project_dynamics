@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm,UsernameField,PasswordChangeForm,SetPasswordForm,PasswordResetForm
 from django.contrib.auth.models import User
 from django.utils import timezone
-
+from .models import upload_file
 
 class RegisterForm(UserCreationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'autofocus':'True','class':'form-control'}))
@@ -35,6 +35,6 @@ class SubmitForm(forms.Form):
     #firstname = forms.CharField(label="Enter first name",max_length=50)  
     #lastname  = forms.CharField(label="Enter last name", max_length = 10)  
     #email     = forms.EmailField(label="Enter Email")
-    foldername =  forms.CharField(label="Enter folder name",max_length=50)  
-    file      = forms.FileField() # for creating file input
-    time = timezone.now()
+    file_name =  forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
+    files_data = forms.FileField(widget=forms.FileInput(attrs={'class':'form-control'})) # for creating file input
+

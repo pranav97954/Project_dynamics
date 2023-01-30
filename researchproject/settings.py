@@ -82,8 +82,10 @@ WSGI_APPLICATION = 'researchproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
         #'NAME': 'project1_db',
+<<<<<<< HEAD
 <<<<<<< HEAD
         'NAME': 'dynamicdb',
         'USER': 'root',
@@ -97,6 +99,14 @@ DATABASES = {
 >>>>>>> parent of 97e0d43 (first commit)
         'HOST': 'localhost',  # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '3306'
+=======
+        #'NAME': 'pranavdb',
+        #'USER': 'root',
+        #'PASSWORD': 'rohitpandey123',
+        #'PASSWORD':'123456789',
+        #'HOST': 'localhost',  # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        #'PORT': '3306'
+>>>>>>> 97e0d43ab2d09d79e46531645b15c593c4b05b77
     }
 }
 
@@ -157,8 +167,13 @@ EMAIL_USE_SSL = False
 
 
 AUTO_LOGOUT = {
-    'IDLE_TIME': timedelta(minutes=1),
-    'SESSION_TIME': timedelta(minutes=20),
+    'IDLE_TIME': timedelta(minutes=10),
+    'SESSION_TIME': timedelta(minutes=30),
     'MESSAGE': 'The session has expired. Please login again to continue.',
     'REDIRECT_TO_LOGIN_IMMEDIATELY': True,
 }
+
+#upload
+
+MEDIA_URL = '/upload/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'upload')

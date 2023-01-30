@@ -11,11 +11,12 @@ urlpatterns = [
     path('slide', views.slide,name="slide"),
     path('simulation/', views.simulation,name="simulation"),
     path('visualization', views.visualization,name="visualization"),
-    path('simulation/test', views.tests,name="tests"),
-    path('summary/', views.summary,name="summary"),
+    #path('simulation/test', views.tests,name="tests"),
     
+    path('summary/', views.summary,name="summary"),
+    path('simulation/upload/', views.uploadfile,name="uploadfile"),
     path('result/<id_user>/',views.result,name="result"),
-    path('res/',views.res,name="res"),
+    path('all/',views.all,name="all"),
     #login
     path('registration/',views.Register.as_view(),name = 'register'),
     path('login/',auth_view.LoginView.as_view(template_name='authentication/login.html',authentication_form=LoginForm) , name='login'),
